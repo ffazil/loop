@@ -1,0 +1,26 @@
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true
+      server:
+        git:
+          uri: https://github.com/ffazil/loop-config
+        health:
+          repositories:
+            organization:
+              label: master
+            partner:
+              label: master
+            task:
+              label: master
+server:
+  port: 8888
+info:
+  description: Loop configuration server
+  url: https://github.com/ffazil/loop
+management:
+  context-path: /admin
+logging:
+  level:
+    org.springframework.cloud:'TRACE'
